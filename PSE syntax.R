@@ -98,46 +98,60 @@ fill.emot <- function(focal, ...) {
   # put the non-focal emotions in a list
   others <- list(...)
   
-  # check if subjects saw this as a unique emotion
-  if(focal[2]==0 | is.na(focal[2])==TRUE | sum(is.na(unlist(lapply(others, '[', 2))))) {
+  # check if there was a problem with the particular emotion or if subjects saw this as a unique emotion
+  if(focal[1]==1 | focal[2]==0) {
     focal <- focal
-  }
-  
-  # otherwise fill it in with the first emotion that was in the same group
-  else {
-    j=1
+  } else {  # otherwise fill it in with the first emotion that was in the same group
+    j <- 1
     
-    # check to see if the group for the focal emotion is the same as the group of emotion i
-    # also make sure that emotion i was not excluded
-    # if either condition is not met, then move on to the i + 1 group
-    while(focal[3]!=others[[j]][3] | others[[j]][2]==1) {
+    # check to see if the group for the focal emotion is the same as the group of emotion j
+    # also make sure that emotion j was not excluded
+    # also make sure that there was no problem with emotion j
+    # if any condition is not met, then move on to the j + 1 group
+    while(focal[3]!=unlist(others[[j]][3]) | others[[j]][2]==1 | others[[j]][1]==1) {
       j <- j+1
+      if(j>length(others)){break} # if the counter j exceeds the number of emotions, then the subject did not group the focal emotion with anything else, so quit
     }
-    # if both conditions are met, then fill in the focal emotion with the data from emotion i
-    focal <- unlist(others[[j]])
+    
+    # if the while loop was able to find another emotion with the same group, then fill in the focal emotion with data from emotion j, otherwise leave it alone
+    if(j <= length(others)) { 
+      focal <- unlist(others[[j]])
+    } else {focal <- focal}
   }
   
   return(focal)
 }
 
 
-
-
-
 ##### 4. Prepare Data for Analysis #####
 
-### separate data by emotion, if there was a problem with the particular emotion then set all values to NA
-pity <- with(pe, data.frame(pity_prob, pityexclude, pitygroup, ppleas, pwanted, pnotwanted, pmecause, ptemp, plastlong, pinfluence, pmeresp, psitcont, pclose, punpleas, psim, pbetter, pnoblame, plookdown, pdvuln, ptargcause, ptargresp, p3pcause, p3presp, psvuln, pstakecare, pdeserve, pdtakecare, pmedo, pmecare, ptargdo, ptargcare, p3pdo, p3pcare, ppowercare, pothers))
-pity[pity$pity_prob==1, 2:length(pity)] <- NA
+### separate data by emotion
+pity <- with(pe, data.frame(pity_prob, exclude_pity, pity_group, ppleas, pwanted, pnotwanted, pmecause, ptemp, plastlong, pinfluence, pmeresp, psitcont, pclose, punpleas, psim, pbetter, pnoblame, plookdown, pdvuln, ptargcause, ptargresp, p3pcause, p3presp, psvuln, pstakecare, pdeserve, pdtakecare, pmedo, pmecare, ptargdo, ptargcare, p3pdo, p3pcare, ppowercare, pothers))
 
-tender <- with(pe, data.frame(tend_prob, tendexclude, tengroup, tpleas, twanted, tnotwanted, tmecause, ttemp, tlastlong, tinfluence, tmeresp, tsitcont, tclose, tunpleas, tsim, tbetter, tnoblame, tlookdown, tdvuln, ttargcause, ttargresp, t3pcause, t3presp, tsvuln, tstakecare, tdeserve, tdtakecare, tmedo, tmecare, ttargdo, ttargcare, t3pdo, t3pcare, tpowercare, tothers))   
-tender[tender$tend_prob==1, 2:length(tender)] <- NA
+tender <- with(pe, data.frame(tend_prob, exclude_tenderness, tend_group, tpleas, twanted, tnotwanted, tmecause, ttemp, tlastlong, tinfluence, tmeresp, tsitcont, tclose, tunpleas, tsim, tbetter, tnoblame, tlookdown, tdvuln, ttargcause, ttargresp, t3pcause, t3presp, tsvuln, tstakecare, tdeserve, tdtakecare, tmedo, tmecare, ttargdo, ttargcare, t3pdo, t3pcare, tpowercare, tothers))  
 
-empathy <- with(pe, data.frame(emp_prob, empexclude, empgroup, epleas, ewanted, enotwanted, emecause, etemp, elastlong, einfluence, emeresp, esitcont, eclose, eunpleas, esim, ebetter, enoblame, elookdown, edvuln, etargcause, etargresp, e3pcause, e3presp, esvuln, estakecare, edeserve, edtakecare, emedo, emecare, etargdo, etargcare, e3pdo, e3pcare, epowercare, eothers))
-empathy[empathy$emp_prob==1, 2:length(empathy)] <- NA
+empathy <- with(pe, data.frame(emp_prob, exclude_empathy, emp_group, epleas, ewanted, enotwanted, emecause, etemp, elastlong, einfluence, emeresp, esitcont, eclose, eunpleas, esim, ebetter, enoblame, elookdown, edvuln, etargcause, etargresp, e3pcause, e3presp, esvuln, estakecare, edeserve, edtakecare, emedo, emecare, etargdo, etargcare, e3pdo, e3pcare, epowercare, eothers))
 
-symp <- with(pe, data.frame(symp_prob, sympexclude, symgroup, spleas, swanted, snotwanted, smecause, stemp, slastlong, sinfluence, smeresp, ssitcont, sclose, sunpleas, ssim, sbetter, snoblame, slookdown, sdvuln, stargcause, stargresp, s3pcause, s3presp, ssvuln, sstakecare, sdeserve, sdtakecare, smedo, smecare, stargdo, stargcare, s3pdo, s3pcare, spowercare, sothers))
-symp[symp$symp_prob==1, 2:length(symp)] <- NA
+symp <- with(pe, data.frame(symp_prob, exclude_sympathy, symp_group, spleas, swanted, snotwanted, smecause, stemp, slastlong, sinfluence, smeresp, ssitcont, sclose, sunpleas, ssim, sbetter, snoblame, slookdown, sdvuln, stargcause, stargresp, s3pcause, s3presp, ssvuln, sstakecare, sdeserve, sdtakecare, smedo, smecare, stargdo, stargcare, s3pdo, s3pcare, spowercare, sothers))
 
-comp <- with(pe, data.frame(comp_prob, compexclude, compgroup, cpleas, cwanted, cnotwanted, cmecause, ctemp, clastlong, cinfluence, cmeresp, csitcont, cclose, cunpleas, csim, cbetter, cnoblame, clookdown, cdvuln, ctargcause, ctargresp, c3pcause, c3presp, csvuln, cstakecare, cdeserve, cdtakecare, cmedo, cmecare, ctargdo, ctargcare, c3pdo, c3pcare, cpowercare, cothers))
-comp[comp$comp_prob==1, 2:length(comp)] <- NA
+comp <- with(pe, data.frame(comp_prob, exclude_compassion, comp_group, cpleas, cwanted, cnotwanted, cmecause, ctemp, clastlong, cinfluence, cmeresp, csitcont, cclose, cunpleas, csim, cbetter, cnoblame, clookdown, cdvuln, ctargcause, ctargresp, c3pcause, c3presp, csvuln, cstakecare, cdeserve, cdtakecare, cmedo, cmecare, ctargdo, ctargcare, c3pdo, c3pcare, cpowercare, cothers))
+
+
+## Fill in excluded emotions with synonymous emotion data
+symp <- data.frame(t(sapply(1:dim(symp)[1], simplify='array', function(i) fill.emot(symp[i,], comp[i,], pity[i,], tender[i,], empathy[i,]))))
+comp <- data.frame(t(sapply(1:dim(comp)[1], function(i) fill.emot(comp[i,], symp[i,], pity[i,], tender[i,], empathy[i,]))))
+tender <- data.frame(t(sapply(1:dim(tender)[1], function(i) fill.emot(tender[i,], symp[i,], pity[i,], comp[i,], empathy[i,]))))
+emp <- data.frame(t(sapply(1:dim(empathy)[1], function(i) fill.emot(empathy[i,], symp[i,], pity[i,], comp[i,], tender[i,]))))
+pity <- data.frame(t(sapply(1:dim(pity)[1], function(i) fill.emot(pity[i,], symp[i,], empathy[i,], comp[i,], tender[i,]))))
+
+
+
+## If there was a problem with the particular emotion, set all values to NA
+pity[pity$pity_prob==1, 4:length(pity)] <- NA
+tender[tender$tend_prob==1, 4:length(tender)] <- NA
+empathy[empathy$emp_prob==1, 4:length(empathy)] <- NA
+symp[symp$symp_prob==1, 4:length(symp)] <- NA
+comp[comp$comp_prob==1, 4:length(comp)] <- NA
+
+
+
