@@ -5,6 +5,7 @@
 # 1. Variable List
 # 2. Import Data/Load Packages
 # 3. Load/Write Functions
+# 4. Prepare Data for Analysis
 #
 ##################################
 
@@ -118,3 +119,25 @@ fill.emot <- function(focal, ...) {
   
   return(focal)
 }
+
+
+
+
+
+##### 4. Prepare Data for Analysis #####
+
+### separate data by emotion, if there was a problem with the particular emotion then set all values to NA
+pity <- with(pe, data.frame(pity_prob, pityexclude, pitygroup, ppleas, pwanted, pnotwanted, pmecause, ptemp, plastlong, pinfluence, pmeresp, psitcont, pclose, punpleas, psim, pbetter, pnoblame, plookdown, pdvuln, ptargcause, ptargresp, p3pcause, p3presp, psvuln, pstakecare, pdeserve, pdtakecare, pmedo, pmecare, ptargdo, ptargcare, p3pdo, p3pcare, ppowercare, pothers))
+pity[pity$pity_prob==1, 2:length(pity)] <- NA
+
+tender <- with(pe, data.frame(tend_prob, tendexclude, tengroup, tpleas, twanted, tnotwanted, tmecause, ttemp, tlastlong, tinfluence, tmeresp, tsitcont, tclose, tunpleas, tsim, tbetter, tnoblame, tlookdown, tdvuln, ttargcause, ttargresp, t3pcause, t3presp, tsvuln, tstakecare, tdeserve, tdtakecare, tmedo, tmecare, ttargdo, ttargcare, t3pdo, t3pcare, tpowercare, tothers))   
+tender[tender$tend_prob==1, 2:length(tender)] <- NA
+
+empathy <- with(pe, data.frame(emp_prob, empexclude, empgroup, epleas, ewanted, enotwanted, emecause, etemp, elastlong, einfluence, emeresp, esitcont, eclose, eunpleas, esim, ebetter, enoblame, elookdown, edvuln, etargcause, etargresp, e3pcause, e3presp, esvuln, estakecare, edeserve, edtakecare, emedo, emecare, etargdo, etargcare, e3pdo, e3pcare, epowercare, eothers))
+empathy[empathy$emp_prob==1, 2:length(empathy)] <- NA
+
+symp <- with(pe, data.frame(symp_prob, sympexclude, symgroup, spleas, swanted, snotwanted, smecause, stemp, slastlong, sinfluence, smeresp, ssitcont, sclose, sunpleas, ssim, sbetter, snoblame, slookdown, sdvuln, stargcause, stargresp, s3pcause, s3presp, ssvuln, sstakecare, sdeserve, sdtakecare, smedo, smecare, stargdo, stargcare, s3pdo, s3pcare, spowercare, sothers))
+symp[symp$symp_prob==1, 2:length(symp)] <- NA
+
+comp <- with(pe, data.frame(comp_prob, compexclude, compgroup, cpleas, cwanted, cnotwanted, cmecause, ctemp, clastlong, cinfluence, cmeresp, csitcont, cclose, cunpleas, csim, cbetter, cnoblame, clookdown, cdvuln, ctargcause, ctargresp, c3pcause, c3presp, csvuln, cstakecare, cdeserve, cdtakecare, cmedo, cmecare, ctargdo, ctargcare, c3pdo, c3pcare, cpowercare, cothers))
+comp[comp$comp_prob==1, 2:length(comp)] <- NA
