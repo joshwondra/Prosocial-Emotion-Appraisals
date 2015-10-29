@@ -87,6 +87,7 @@ pe <- pe[pe$total_prob!=1,]
 
 library(rjags)
 library(R2jags)
+library(psych)
 
 
 
@@ -138,12 +139,18 @@ comp <- with(pe, data.frame(comp_prob, exclude_compassion, comp_group, cpleas, c
 
 
 ## Fill in excluded emotions with synonymous emotion data
-symp <- data.frame(t(sapply(1:dim(symp)[1], simplify='array', function(i) fill.emot(symp[i,], comp[i,], pity[i,], tender[i,], empathy[i,]))))
+symp <- data.frame(t(sapply(1:dim(symp)[1], simplify=TRUE, function(i) fill.emot(symp[i,], comp[i,], pity[i,], tender[i,], empathy[i,]))))
 comp <- data.frame(t(sapply(1:dim(comp)[1], function(i) fill.emot(comp[i,], symp[i,], pity[i,], tender[i,], empathy[i,]))))
 tender <- data.frame(t(sapply(1:dim(tender)[1], function(i) fill.emot(tender[i,], symp[i,], pity[i,], comp[i,], empathy[i,]))))
-emp <- data.frame(t(sapply(1:dim(empathy)[1], function(i) fill.emot(empathy[i,], symp[i,], pity[i,], comp[i,], tender[i,]))))
+empathy <- data.frame(t(sapply(1:dim(empathy)[1], function(i) fill.emot(empathy[i,], symp[i,], pity[i,], comp[i,], tender[i,]))))
 pity <- data.frame(t(sapply(1:dim(pity)[1], function(i) fill.emot(pity[i,], symp[i,], empathy[i,], comp[i,], tender[i,]))))
 
+## Unlist everything in the data frame
+symp <- data.frame(t(apply(symp, 1, unlist)))
+comp <- data.frame(t(apply(comp, 1, unlist)))
+empathy <- data.frame(t(apply(empathy, 1, unlist)))
+tender <- data.frame(t(apply(tender, 1, unlist)))
+pity <- data.frame(t(apply(pity, 1, unlist)))
 
 
 ## If there was a problem with the particular emotion, set all values to NA
@@ -154,4 +161,21 @@ symp[symp$symp_prob==1, 4:length(symp)] <- NA
 comp[comp$comp_prob==1, 4:length(comp)] <- NA
 
 
+## Recombine the data
+pe <- cbind(pe[,1:4], symp, pity, comp, empathy, tender)
 
+
+##### 5. Data Reduction #####
+
+## Parallel analysis to decide on factor extraction
+fa.parallel(pity[,4:35], fm='ml', n.iter=500) # 7 for both
+fa.parallel(symp[,4:35], fm='ml', n.iter=500) # 7 for both
+fa.parallel(comp[,4:35], fm='ml', n.iter=500) # 8 for FA, 6 for PCA
+fa.parallel(empathy[,4:35], fm='ml', n.iter=500) # 6 for both 
+fa.parallel(tender[,4:35], fm='ml', n.iter=500) # 7 for FA, 6 for PCA
+
+fa(pity[,4:35], fm='ml', rotate='oblimin', nfactors=7)
+fa(symp[,4:35], fm='ml', rotate='oblimin', nfactors=7)
+fa(comp[,4:35], fm='ml', rotate='oblimin', nfactors=7)
+fa(empathy[,4:35], fm='ml', rotate='oblimin', nfactors=7)
+fa(tender[,4:35], fm='ml', rotate='oblimin', nfactors=7)

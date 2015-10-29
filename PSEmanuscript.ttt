@@ -1,0 +1,56 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\tiny
+\begin{tabular}{p{16cm}}
+Intrinsic Pleasantness \\
+\hspace{1cm}(Pleasant) How pleasant did you feel in the situation? \\
+\hspace{1cm}(Unpleasant) How unpleasant did you feel in the situation? \\
+Self-Relevance \\
+\hspace{1cm}(Close) Think about the person or people who you felt pity for. When you were feeling pity, how close to them did you feel? \\
+\hspace{1cm}(Similar) Think about the person or people who you felt pity for. Did you think they were like you? \\
+Goal Conduciveness \\
+\hspace{1cm}(Conducive) How much did you feel like the situation was something that you wanted to happen? \\
+\hspace{1cm}(Obstructive) How much did you feel like the situation was something that you did not want to happen? \\
+Situational Agency \\
+\hspace{1cm}(Situational Control) How much did you feel like the situation was due to circumstances that were beyond anyone’s control? \\
+\hspace{1cm}(Blame Someone) How much did you feel like the events happened because someone was to blame? \\
+Self-Agency for Event \\
+\hspace{1cm}(Self-Cause) How much did you feel like you caused the situation? \\
+\hspace{1cm}(Self-Responsible) How much did you feel responsible for what happened? \\
+Target-Agency for Event \\
+\hspace{1cm}(Target-Cause) Think about the person or people who you felt pity for. How much did you feel like they caused what happened? \\
+\hspace{1cm}(Target-Responsible) Think about the person or people who you felt pity for. How much did you feel like they were responsible for what happened? \\
+Other-Agency for Event \\
+\hspace{1cm}(Other-Cause) Aside from you and the person or people who you felt pity for, how much did you feel like someone else caused the situation? \\
+\hspace{1cm}(Other-Responsible) Aside from you and the person or people who you felt pity for, how much did you feel like someone else was responsible for what happened? \\
+Coping Potential/Power \\
+\hspace{1cm}(Power-Influence) When you were feeling pity, how much did you feel that you had the power to influence the situation? \\
+\hspace{1cm}(Power-Care) Think about the person or people who you felt pity for. When you were feeling pity, how much did you feel that you had the power to take care of them? \\
+Self-Agency for Resolution \\
+\hspace{1cm}(Self-Act) Think about what caused you to feel pity. How much did you feel like you should do something about the situation? \\
+\hspace{1cm}(Self-Care) Think about the person or people who you felt pity for. How much did you feel like you should take care of them? \\
+Target-Agency for Resolution \\
+\hspace{1cm}(Target-Act) Think about the person or people who you felt pity for. How much did you feel like they should do something about the situation? \\
+\hspace{1cm}(Target-Care) Think about the person or people who you felt pity for. How much did you feel like they should take care of themselves? \\
+Other-Agency for Resolution \\
+\hspace{1cm}(Other-Act) Aside from you and the person or people you felt pity for, how much did you feel like someone else should do something about the situation? \\
+\hspace{1cm}(Other-Care) Think about the person or people who you felt pity for. Aside from you and them, how much did you feel like someone else should take care of them? \\
+Superiority \\
+\hspace{1cm}(Better) Think about the person or people you felt pity for. When you were feeling pity, how much did you feel like you were better than them? \\
+\hspace{1cm}(Look Down) Think about the person or people you felt pity for. When you were feeling pity, how much did you feel like you were looking down on them? \\
+Vulnerability \\
+\hspace{1cm}(Vulnerable-Situation) Think about the situation the person or people who you felt pity were in. How much did you feel like the situation would make most people vulnerable? \\
+\hspace{1cm}(Vulnerable-Normal) Think about the situation the person or people who you felt pity for were in. How much did you feel like most people would be able to take care of themselves in the same situation? \\
+\hspace{1cm}(Vulnerable-Disposition) Think about the person or people who you felt pity for. How much did you feel like they were generally vulnerable? \\
+\hspace{1cm}(Vulnerable-General) Think about the person or people who you felt pity for. How much did you feel like they were the kind of people who could take care of themselves in general? \\
+Stability \\
+\hspace{1cm}(Temporary) When you were feeling pity, how much did you feel like the situation was only temporary and would change? \\
+\hspace{1cm}(Lasting) When you were feeling pity, did you feel like the situation would last for a long time? \\
+Deservingness \\
+\hspace{1cm}(Deserve) Think about the person or people who you felt pity for. How much did you feel like they deserved your pity? \\
+\hspace{1cm}(Others Feel) Think about the person or people who you felt pity for. How much did you feel like most people should feel pity for them as well? \\
+\end{tabular}
+\end{table*}
+\efloatseparator
+ 

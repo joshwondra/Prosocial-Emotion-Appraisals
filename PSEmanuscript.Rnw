@@ -1,0 +1,108 @@
+\documentclass[man]{apa6}
+
+\usepackage{longtable}
+\usepackage{threeparttablex}
+
+\title{Appraisal Patterns of Prosocial Emotions}
+\shorttitle{Appraisals and Prosocial Emotions}
+\author{Joshua D. Wondra and Phoebe C. Ellsworth}
+\affiliation{University of Michigan}
+
+\abstract{This is an abstract.}
+\keywords{sympathy, empathy, compassion, pity, appraisal}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\section{Method}
+\subsection{Overview}
+Subjects wrote about past emotional experiences. After writing about each experience, the subjects completed a survey with appraisal questions and some exploratory questions. There were 196 university students and local community members who were recruited for the study. Data from two subjects were excluded from analyses due to inattention, leaving the final sample at 194. Subjects received \$10 or course credit for participating. 
+\subsection{Procedure}
+Subjects participated in groups of up to 10 people. Subjects were told that the researchers were interested in them and how they think about their past emotional experiences. In particular, they were told that there is disagreement in the research literature about the similarities and differences among pity, sympathy, compassion, tenderness, and empathy, but that no one has asked people about their real emotional experiences to learn more. They were asked to write about their experiences of the emotions and then answer some questions about those experiences. Subjects were told that some people have more to write about their experiences than others, so to keep everyone on pace to finish the study within about an hour, every five minutes the experimenter would announce the time to let subjects know that they should finish writing or that they should be about ready to wrap up the questions and write about the next experience.
+
+We chose to include sympathy, compassion, and pity, because they are most clearly implicated as prosocial emotions and they are used somewhat synonymously, although inconsistently so (Smith, Kundera, CITATIONS). Additionally, pity seems to have taken on a somewhat negative connotation. In our experience, sympathy has also taken on a slight sense of disdain that is absent from compassion. We prefer to use the term empathy the way that it is typically used in social neuroscience and developmental psychology--to refer to cases where one person who is not directly involved in someone else's emotional experience still feels the same emotion as that person. In this use, empathy could involve any emotion rather than a unique emotional experience. However, we included it because social psychologists have used it as somewhat synonymous with compassion or sympathy, and we believe that many lay people use it in this sense as well. We included tenderness because of arguments that altruism and associated emotional experiences are rooted in parenting (Preston, Batson, McDougall).
+
+During pilot testing, we found that some subjects thought that some of the terms were synonymous. So at the beginning of the study, each subject placed the emotion terms in 1-5 groups. Emotion terms that were placed in the same group were considered synonymous by the subjects. If a subject placed multiple emotions in the same group, then the experimenter asked the subject which emotion term he or she preferred. The subject wrote about only the preferred emotion from the group. Data from the preferred emotion were imputed to all other emotions in the same group.
+
+The order in which subjects wrote about their emotional experiences was randomized between subjects. For each emotion, subjects received the same set of instructions for how to write about the experience. For example, for pity subjects read:
+
+\begin{quote}
+Think of a time when you felt \underline{pity} toward someone. Try to remember the experience as vividly as possible. Picture the situation in your mind and try to remember all the details of the situation. When you have this memory clearly in mind, answer the following questions:
+
+1) Tell us in as much detail as possible what happened to make you feel pity, including who was involved. 
+
+2) Tell us in as much detail as possible what you were feeling and thinking.
+
+3) Tell us about what you did and what you said.
+
+As much as possible, write your description so that someone reading it would feel the pity you felt from reading your description.
+\end{quote}
+
+After subjects finished writing, they moved on to the appraisal questions. The hypothesized appraisal dimensions and the items used to measure them are displayed in Table 1. Several of the proposed appraisal dimensions are common to previous models of appraisal (CITATIONS). These are intrinsice pleasantness, goal conduciveness, self-agency for the event, and coping potential/power. Other-agency was broken into two parts--one for the target of the emotion, and one for other people. Situational agency is often indistinguishable from coping potential/power in empirical investigations of appraisals, but conceptually it could be distinct. For example, (come up with examples of situationally caused controllable, or self/other caused uncontrollable events). The appraisal dimension of self-relevance is similar to the dimension of goal-relevance that has appeared in some appraisal theories, but it reflects the particular hypotheses of Stellar and Keltner (CITATION) that compassion involves appraisals that another person is close or similar. 
+
+In addition to appraisal dimensions investigated in previous appraisal theories, several new hypothesized dimensions were added that might be important for distinguishing among prosocial emotions. First, situations that evoke prosocial emotions have two potentially separate agency appraisals--one for causing a negative event, and another for who is responsible for resolving the event. These appraisals do not have to match, such as when the negative event was caused by bad circumstances, but one has a personal responsibility for helping the victim. Therefore, we added items for appraisals of self-agency, other-agency, and target-agency for resolution of the event. Second, we added appraisals for one's own sense of superiority over the other person and for the stability of the situation. These appraisals have been hypothesized to distinguish pity from other prosocial emotions, because feeling pity might involve the appraisal that one is superior to the other person or that the other person's situation is stable (CITATIONS). Third, we added appraisals of vulnerability, with items focusing on both situational vulnerability and dispositional vulnerability, because tenderness is thought to involve appraisals of vulnerability without a negative event (CITATIONS). Finally, we added items measuring appraisals that the other person is deserving of the emotional reaction because this has been hypothesized to be an important appraisal for compassion (Stellar and Keltner). 
+
+After they finished the appraisal questions, subjects were asked two exploratory questions. First, they were asked what other emotions they felt during the experience they wrote about, if any. Second, they were asked, "People use the word love in different ways. If you were to call pity a kind of love, then what kind of love would it be? If you would \underline{not} call pity a kind of love, then you may say so." For pity, they were also asked, "There is a saying, 'Pity is akin to contempt.' Do you think this is true? How?"
+
+\begin{table}
+\tiny
+\begin{tabular}{p{16cm}}
+Intrinsic Pleasantness \\
+\hspace{1cm}(Pleasant) How pleasant did you feel in the situation? \\
+\hspace{1cm}(Unpleasant) How unpleasant did you feel in the situation? \\
+Self-Relevance \\
+\hspace{1cm}(Close) Think about the person or people who you felt pity for. When you were feeling pity, how close to them did you feel? \\
+\hspace{1cm}(Similar) Think about the person or people who you felt pity for. Did you think they were like you? \\
+Goal Conduciveness \\
+\hspace{1cm}(Conducive) How much did you feel like the situation was something that you wanted to happen? \\
+\hspace{1cm}(Obstructive) How much did you feel like the situation was something that you did not want to happen? \\
+Situational Agency \\
+\hspace{1cm}(Situational Control) How much did you feel like the situation was due to circumstances that were beyond anyone’s control? \\
+\hspace{1cm}(Blame Someone) How much did you feel like the events happened because someone was to blame? \\
+Self-Agency for Event \\
+\hspace{1cm}(Self-Cause) How much did you feel like you caused the situation? \\
+\hspace{1cm}(Self-Responsible) How much did you feel responsible for what happened? \\
+Target-Agency for Event \\
+\hspace{1cm}(Target-Cause) Think about the person or people who you felt pity for. How much did you feel like they caused what happened? \\
+\hspace{1cm}(Target-Responsible) Think about the person or people who you felt pity for. How much did you feel like they were responsible for what happened? \\
+Other-Agency for Event \\
+\hspace{1cm}(Other-Cause) Aside from you and the person or people who you felt pity for, how much did you feel like someone else caused the situation? \\
+\hspace{1cm}(Other-Responsible) Aside from you and the person or people who you felt pity for, how much did you feel like someone else was responsible for what happened? \\
+Coping Potential/Power \\
+\hspace{1cm}(Power-Influence) When you were feeling pity, how much did you feel that you had the power to influence the situation? \\
+\hspace{1cm}(Power-Care) Think about the person or people who you felt pity for. When you were feeling pity, how much did you feel that you had the power to take care of them? \\
+Self-Agency for Resolution \\
+\hspace{1cm}(Self-Act) Think about what caused you to feel pity. How much did you feel like you should do something about the situation? \\
+\hspace{1cm}(Self-Care) Think about the person or people who you felt pity for. How much did you feel like you should take care of them? \\
+Target-Agency for Resolution \\
+\hspace{1cm}(Target-Act) Think about the person or people who you felt pity for. How much did you feel like they should do something about the situation? \\
+\hspace{1cm}(Target-Care) Think about the person or people who you felt pity for. How much did you feel like they should take care of themselves? \\
+Other-Agency for Resolution \\
+\hspace{1cm}(Other-Act) Aside from you and the person or people you felt pity for, how much did you feel like someone else should do something about the situation? \\
+\hspace{1cm}(Other-Care) Think about the person or people who you felt pity for. Aside from you and them, how much did you feel like someone else should take care of them? \\
+Superiority \\
+\hspace{1cm}(Better) Think about the person or people you felt pity for. When you were feeling pity, how much did you feel like you were better than them? \\
+\hspace{1cm}(Look Down) Think about the person or people you felt pity for. When you were feeling pity, how much did you feel like you were looking down on them? \\
+Vulnerability \\
+\hspace{1cm}(Vulnerable-Situation) Think about the situation the person or people who you felt pity were in. How much did you feel like the situation would make most people vulnerable? \\
+\hspace{1cm}(Vulnerable-Normal) Think about the situation the person or people who you felt pity for were in. How much did you feel like most people would be able to take care of themselves in the same situation? \\
+\hspace{1cm}(Vulnerable-Disposition) Think about the person or people who you felt pity for. How much did you feel like they were generally vulnerable? \\
+\hspace{1cm}(Vulnerable-General) Think about the person or people who you felt pity for. How much did you feel like they were the kind of people who could take care of themselves in general? \\
+Stability \\
+\hspace{1cm}(Temporary) When you were feeling pity, how much did you feel like the situation was only temporary and would change? \\
+\hspace{1cm}(Lasting) When you were feeling pity, did you feel like the situation would last for a long time? \\
+Deservingness \\
+\hspace{1cm}(Deserve) Think about the person or people who you felt pity for. How much did you feel like they deserved your pity? \\
+\hspace{1cm}(Others Feel) Think about the person or people who you felt pity for. How much did you feel like most people should feel pity for them as well? \\
+\end{tabular}
+\end{table}
+
+
+
+\section{Results}
+\subsection{Data Reduction}
+For each emotion, the appraisal questions
+
+
+\end{document}
